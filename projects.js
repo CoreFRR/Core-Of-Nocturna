@@ -12,5 +12,15 @@ window.PROJECTS = [
       { label: 'Télécharger', url: 'https://github.com/CoreFRR/Core-Of-Project/releases/latest', primary: true },
       { label: 'GitHub', url: 'https://github.com/CoreFRR/Core-Of-Project' }
     ]
+  },
+  {
+    name: 'Nocturna Ultra',
+    tagline: 'Bot Discord pour gérer et animer ton serveur : modération, tickets, niveaux et économie.',
+    logo: 'assets/nocturna-ultra.svg',
+    tags: ['Discord', 'Node.js', 'discord.js'],
+    features: ['Modération et auto-modération', 'Tickets de support multi-panneaux', 'Niveaux (XP) et économie', 'Messages d\'arrivée et de départ, règlement, rôles automatiques', 'Sauvegardes de la structure du serveur'],
+    links: [
+      { label: 'Inviter le bot', url: 'https://discord.com/oauth2/authorize?client_id=1542888939168333895&permissions=8&integration_type=0&scope=bot', primary: true }
+    ]
   }
 ]
