@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CoreFRR — Mes projets</title>
+  <meta name="description" content="Les projets de CoreFRR : applications, outils et expérimentations.">
+  <link rel="icon" href="assets/nocturna-code.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <span class="brand">CoreFRR</span>
+      <a class="gh" href="https://github.com/CoreFRR">GitHub ↗</a>
+    </header>
+    <section class="hero">
+      <h1>Des outils faits pour être utilisés.</h1>
+      <p>Mes projets, de l'idée à la version téléchargeable. Tout est gratuit et open source sur GitHub.</p>
+    </section>
+    <h2>Projets</h2>
+    <main id="grid" class="grid"></main>
+    <footer>© <span id="year"></span> CoreFRR</footer>
+  </div>
+  <script src="projects.js"></script>
+  <script>
+    const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]))
+    document.getElementById('year').textContent = new Date().getFullYear()
+    document.getElementById('grid').innerHTML = window.PROJECTS.map((p) => `
+      <article class="card">
+        <div class="top">
+          ${p.logo ? `<img src="${esc(p.logo)}" alt="">` : ''}
+          <div><h3>${esc(p.name)}</h3>
+            ${p.status ? `<span class="badge">${esc(p.status)}</span>` : ''}${p.version ? `<small>v${esc(p.version)}</small>` : ''}</div>
+        </div>
+        <p>${esc(p.tagline)}</p>
+        ${p.features ? `<ul>${p.features.map((f) => `<li>${esc(f)}</li>`).join('')}</ul>` : ''}
+        ${p.tags ? `<div class="tags">${p.tags.map((t) => `<span>${esc(t)}</span>`).join('')}</div>` : ''}
+        <div class="links">${(p.links || []).map((l) => `<a class="btn${l.primary ? ' primary' : ''}" href="${esc(l.url)}">${esc(l.label)}</a>`).join('')}</div>
+      </article>`).join('')
+  </script>
+</body>
+</html>
