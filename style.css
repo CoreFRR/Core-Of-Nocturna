@@ -4,6 +4,7 @@ body{margin:0;background:radial-gradient(900px 500px at 80% -10%,#2a2470 0,trans
 a{color:inherit;text-decoration:none}
 .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
 header{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.nav{display:flex;align-items:center;gap:18px}
 .brand{font-weight:700;letter-spacing:.02em}
 header a.gh{color:var(--mute);font-size:14px}header a.gh:hover{color:var(--fg)}
 .hero{padding:72px 0 48px}
